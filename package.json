@@ -18,6 +18,9 @@
     "@ckeditor/ckeditor5-core": "^20.0.0",
     "@ckeditor/ckeditor5-ui": "^20.0.0"
   },
+  "files": [
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mistralys/ckeditor5-paste-plaintext.git",
