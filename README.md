@@ -42,3 +42,7 @@ ClassicEditor
     })
 )
 ```
+
+## Credits
+
+The toolbar icon is based on an SVG file created by [Vitaly Gorbachev](https://www.flaticon.com/authors/vitaly-gorbachev).
