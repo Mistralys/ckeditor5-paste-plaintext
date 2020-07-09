@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-paste-plaintext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Paste as plaintext plugin for CKEditor5",
   "keywords": [
     "ckeditor5",
