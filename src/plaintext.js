@@ -4,6 +4,7 @@ import plainTextToHtml from '@ckeditor/ckeditor5-clipboard/src/utils/plaintextto
 
 import PastePlainTextCommand from './command';
 import PastePlainTextUI from './ui';
+import Translation from './translation';
 
 /**
  * The main plugin class with the logic to use only the
@@ -19,6 +20,8 @@ export default class PastePlainText extends Plugin {
     }
 
     init() {
+        (new Translation()).translate();
+        
         const editor = this.editor;
 
         editor.commands.add( 'pastePlainText', new PastePlainTextCommand( editor ) );

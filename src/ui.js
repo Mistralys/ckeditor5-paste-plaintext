@@ -4,27 +4,6 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import PasteIcon from './paste-plain.svg';
 
 /**
- * Import the translation service, so we can add some 
- * translations for the button text.
- */
-import { add } from '@ckeditor/ckeditor5-utils/src/translation-service';
-
-add(
-    'de',
-    {
-        'Toggle removing any formatting from pasted text.': 'Das Entfernen der Formatierungen beim Einfügen ein- oder ausschalten.'
-    }
-);
-
-add(
-    'fr',
-    {
-        'Toggle removing any formatting from pasted text.': 'Activer ou désactiver la suppression des formatages du texte à l\'insertion.'
-    }
-);
-
-
-/**
  * Handles registering the toggleable button in the 
  * editor's UI so it can be added to the toolbar, with
  * the name `pastePlainText`.
