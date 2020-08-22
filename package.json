@@ -14,10 +14,6 @@
     "url": "https://github.com/Mistralys"
   },
   "license": "MIT",
-  "dependencies": {
-    "@ckeditor/ckeditor5-core": "^20.0.0",
-    "@ckeditor/ckeditor5-ui": "^20.0.0"
-  },
   "files": [
     "src"
   ],
