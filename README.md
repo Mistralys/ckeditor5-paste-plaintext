@@ -15,7 +15,7 @@ npm install --save ckeditor5-paste-plaintext
 Then add the needed import to your `app.js`:
 
 ```javascript
-import PastePlainText from 'ckeditor5-paste-plaintext/src/plaintext';
+import PasteAsPlainText from 'ckeditor5-paste-plaintext/src/plaintext';
 ```
 
 Create the build with webpack, or your preferred way of building the sources - for example:
@@ -33,7 +33,7 @@ ClassicEditor
     .create( document.querySelector( '#editor' ), {
         plugins: [ 
             // your other plugins here
-            PastePlainText
+            PasteAsPlainText
         ],
         toolbar: [ 
             // your other buttons here
