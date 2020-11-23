@@ -12,7 +12,7 @@ import Translation from './translation';
  */
 export default class PastePlainText extends Plugin {
     static get pluginName() {
-        return 'PlainTextPaste'
+        return 'PasteAsPlainText'
     }
 
     static get requires() {
