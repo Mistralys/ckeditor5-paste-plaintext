@@ -26,8 +26,8 @@ export default class PastePlainText extends Plugin {
 
         editor.commands.add( 'pastePlainText', new PastePlainTextCommand( editor ) );
 
-        // Logic responsible for converting HTML to plain text.
-        const clipboardPlugin = editor.plugins.get( 'Clipboard' );
+        // The logic responsible for converting HTML to plain text.
+        const clipboardPlugin = editor.plugins.get( 'ClipboardPipeline' );
         const command = editor.commands.get( 'pastePlainText' );
         const editingView = editor.editing.view;
 
@@ -38,11 +38,8 @@ export default class PastePlainText extends Plugin {
 
             const dataTransfer = data.dataTransfer;
             let content = plainTextToHtml( dataTransfer.getData( 'text/plain' ) );
-            content = clipboardPlugin._htmlDataProcessor.toView( content );
-            clipboardPlugin.fire( 'inputTransformation', { content, dataTransfer } );
-            editingView.scrollToTheSelection();
 
-            evt.stop();
+            data.content = this.editor.data.htmlProcessor.toView( content );
         } );
     }
 };
