@@ -11,6 +11,6 @@ declare module '@ckeditor/ckeditor5-core' {
 	}
 
 	interface CommandsMap {
-		pastePlainText: PasteAsPlainTextCommand;
+		pasteAsPlainText: PasteAsPlainTextCommand;
 	}
 }

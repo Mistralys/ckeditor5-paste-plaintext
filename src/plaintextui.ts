@@ -9,7 +9,7 @@ import type PasteAsPlainTextCommand from './plaintextcommand';
 
 import PasteIcon from './paste-plain.svg';
 
-const PAST_PLAIN = 'pastePlainText';
+const PAST_PLAIN = 'pasteAsPlainText';
 
 /**
  * Handles registering the toggleable button in the
@@ -31,7 +31,9 @@ export default class PasteAsPlainTextUI extends Plugin {
 		const editor = this.editor;
 		const t = editor.t;
 
-		editor.ui.componentFactory.add( PAST_PLAIN, locale => {
+		editor.ui.componentFactory.add( 'pastePlainText', locale => {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore
 			const command: PasteAsPlainTextCommand = editor.commands.get( PAST_PLAIN );
 			const view = new ButtonView( locale );
 

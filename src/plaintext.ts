@@ -26,11 +26,13 @@ export default class PasteAsPlainText extends Plugin {
 		( new Translation() ).translate();
 		const editor = this.editor;
 
-		editor.commands.add( 'pastePlainText', new PasteAsPlainTextCommand( editor ) );
+		editor.commands.add( 'pasteAsPlainText', new PasteAsPlainTextCommand( editor ) );
 
 		// The logic responsible for converting HTML to plain text.
 		const clipboardPlugin: ClipboardPipeline = editor.plugins.get( 'ClipboardPipeline' );
-		const command: PasteAsPlainTextCommand = editor.commands.get( 'pastePlainText' );
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
+		const command: PasteAsPlainTextCommand = editor.commands.get( 'pasteAsPlainText' );
 		const editingView = editor.editing.view;
 
 		editingView.document.on( 'clipboardInput', ( evt, data ) => {
