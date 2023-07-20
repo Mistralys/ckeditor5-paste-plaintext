@@ -1,10 +1,13 @@
+/**
+ * @module PasteAsPlainText/PasteAsPlainText
+ */
 
-import { Plugin, type Editor, Command } from '@ckeditor/ckeditor5-core';
+import { Plugin } from '@ckeditor/ckeditor5-core';
 import plainTextToHtml from '@ckeditor/ckeditor5-clipboard/src/utils/plaintexttohtml';
-import PastePlainTextCommand from './command';
-import PastePlainTextUI from './ui';
+import PasteAsPlainTextUI from './plaintextui';
+import PasteAsPlainTextCommand from './plaintextcommand';
 import Translation from './translation';
-import { ClipboardPipeline } from "@ckeditor/ckeditor5-clipboard";
+import type { ClipboardPipeline } from '@ckeditor/ckeditor5-clipboard';
 
 /**
  * The main plugin class with the logic to use only the
@@ -16,29 +19,29 @@ export default class PasteAsPlainText extends Plugin {
 	}
 
 	public static get requires() {
-		return [ PastePlainTextUI, PastePlainTextCommand ] as const;
+		return [ PasteAsPlainTextUI, PasteAsPlainTextCommand ] as const;
 	}
 
 	public init(): void {
-        (new Translation()).translate();
-        const editor = this.editor;
+		( new Translation() ).translate();
+		const editor = this.editor;
 
-        editor.commands.add( 'pastePlainText', new PastePlainTextCommand( editor ) );
+		editor.commands.add( 'pastePlainText', new PasteAsPlainTextCommand( editor ) );
 
-        // The logic responsible for converting HTML to plain text.
+		// The logic responsible for converting HTML to plain text.
 		const clipboardPlugin: ClipboardPipeline = editor.plugins.get( 'ClipboardPipeline' );
-		const command: PastePlainTextCommand = this.editor.commands.get( 'pastePlainText' );
-        const editingView = editor.editing.view;
+		const command: PasteAsPlainTextCommand = editor.commands.get( 'pastePlainText' );
+		const editingView = editor.editing.view;
 
-        editingView.document.on( 'clipboardInput', ( evt, data ) => {
-            if ( editor.isReadOnly || !command.value ) {
-                return;
-            }
+		editingView.document.on( 'clipboardInput', ( evt, data ) => {
+			if ( editor.isReadOnly || !command.value ) {
+				return;
+			}
 
-            const dataTransfer = data.dataTransfer;
-            let content = plainTextToHtml( dataTransfer.getData( 'text/plain' ) );
+			const dataTransfer = data.dataTransfer;
+			const content = plainTextToHtml( dataTransfer.getData( 'text/plain' ) );
 
-            data.content = this.editor.data.htmlProcessor.toView( content );
-        } );
-    }
-};
+			data.content = this.editor.data.htmlProcessor.toView( content );
+		} );
+	}
+}

@@ -1,6 +1,6 @@
 {
-	//"extends": "../../tsconfig.release.json",
-	"extends": "../../../../tsconfig.release.json",
+	"extends": "../../tsconfig.release.json",
+	//"extends": "../../../../tsconfig.release.json",
 	"compilerOptions": {
 		"strict": false,
 		"module": "es6",
@@ -11,8 +11,8 @@
 	},
 	"include": [
 		"src",
-		//"../../typings"
-		"../../../../typings"
+		"../../typings"
+		//"../../../../typings"
 	],
 	"exclude": [
 		"tests"

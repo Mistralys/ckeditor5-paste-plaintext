@@ -1,16 +1,13 @@
+/**
+ * @module PasteAsPlainText/PasteAsPlainTextCommand
+ */
+
 import { Command } from 'ckeditor5/src/core';
 
 /**
  * Handles the toggled state of the button.
  */
-export default class PastePlainTextCommand extends Command {
-	/**
-	 * A value indicating whether the command is active. If the selection has some highlight attribute,
-	 * it corresponds to the value of that attribute.
-	 *
-	 * @observable
-	 * @readonly
-	 */
+export default class PasteAsPlainTextCommand extends Command {
 	declare public value: boolean;
 
 	/**
@@ -26,6 +23,9 @@ export default class PastePlainTextCommand extends Command {
 		}
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public override execute(): void {
 		// Toggle the button state
 		this.value = !this.value;
