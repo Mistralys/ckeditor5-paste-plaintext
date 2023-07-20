@@ -1,0 +1,21 @@
+{
+	//"extends": "../../tsconfig.release.json",
+	"extends": "../../../../tsconfig.release.json",
+	"compilerOptions": {
+		"strict": false,
+		"module": "es6",
+		"target": "es2019",
+		"sourceMap": false,
+		"allowJs": true,
+		"skipLibCheck": true
+	},
+	"include": [
+		"src",
+		//"../../typings"
+		"../../../../typings"
+	],
+	"exclude": [
+		"tests"
+	]
+}
+e

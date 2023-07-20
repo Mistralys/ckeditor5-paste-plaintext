@@ -1,23 +1,24 @@
 
-import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import { Plugin, Command } from '@ckeditor/ckeditor5-core';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import PasteIcon from './paste-plain.svg';
 
 /**
- * Handles registering the toggleable button in the 
+ * Handles registering the toggleable button in the
  * editor's UI so it can be added to the toolbar, with
  * the name `pastePlainText`.
  */
 export default class PastePlainTextUI extends Plugin {
-    init() {
+
+	public init(): void {
         const editor = this.editor;
 
         editor.ui.componentFactory.add( 'pastePlainText', locale => {
             const view = new ButtonView( locale );
             const command = editor.commands.get( 'pastePlainText' );
-            
+
             // to be table to use the translation function
-            const t = view.t; 
+            const t = view.t;
 
             view.set( {
                 label: t('Toggle removing any formatting from pasted text.'),
