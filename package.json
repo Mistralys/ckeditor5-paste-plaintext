@@ -9,6 +9,7 @@
     "paste",
     "plaintext"
   ],
+  "main": "src/index.ts",
   "author": {
     "name": "Mistralys",
     "url": "https://github.com/Mistralys"
