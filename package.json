@@ -1,6 +1,6 @@
 {
   "name": "ckeditor5-paste-plaintext",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Paste as plaintext plugin for CKEditor5",
   "keywords": [
     "ckeditor5",
@@ -9,18 +9,25 @@
     "paste",
     "plaintext"
   ],
-  "main": "src/index.ts",
+  "main": "src/index.d.ts",
+  "dependencies": {
+    "@ckeditor/ckeditor5-core": "^38.0.0",
+    "@ckeditor/ckeditor5-ui": "^38.0.0",
+    "@ckeditor/ckeditor5-clipboard": "^38.0.0"
+  },
   "author": {
     "name": "Mistralys",
     "url": "https://github.com/Mistralys"
   },
   "license": "MIT",
   "files": [
-    "src"
+    "src",
+    "theme",
+    "CHANGELOG.md"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mistralys/ckeditor5-paste-plaintext.git",
+    "url": "https://github.com/mistralys/ckeditor5-paste-plaintext.git",
     "directory": ""
   }
 }

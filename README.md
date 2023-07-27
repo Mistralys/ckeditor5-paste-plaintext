@@ -37,7 +37,7 @@ ClassicEditor
         ],
         toolbar: [ 
             // your other buttons here
-            'pastePlainText'
+            'pasteAsPlainText'
         ]
     })
 )
